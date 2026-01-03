@@ -21,3 +21,12 @@ This same pattern applies to:
 - Invoicing
 - Sales reports
 - Automation systems
+## Day 3 – Modules & Separation of Concerns
+
+I split the system into modules:
+- data (appointments)
+- services (business logic)
+- utils (formatting)
+- index.js (wiring)
+
+This makes the system easier to test, change, and reuse.
