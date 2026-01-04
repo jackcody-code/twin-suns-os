@@ -30,3 +30,10 @@ I split the system into modules:
 - index.js (wiring)
 
 This makes the system easier to test, change, and reuse.
+## Day 4 – Configuration and Flexibility
+
+Before today, numbers were hard-coded.
+
+Today I added a config file and passed it into the system so those values aren’t stuck in the code.
+
+I don’t 100% understand it yet, but now those numbers are flexible and easy to change.
