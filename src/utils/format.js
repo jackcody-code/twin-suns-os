@@ -1,8 +1,8 @@
-function formatUSD(amount) {
-    return new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD"
-    }).format(amount);
+function formatCurrency(amount, { locale, currency }) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency
+  }).format(amount);
 }
 
-module.exports = { formatUSD };
+module.exports = { formatCurrency };

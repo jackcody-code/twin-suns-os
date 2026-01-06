@@ -1,0 +1,4 @@
+Daily Revenue Report
+-------------------
+Appointments: 3
+Revenue: $2,420.00

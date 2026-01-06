@@ -37,3 +37,23 @@ Before today, numbers were hard-coded.
 Today I added a config file and passed it into the system so those values aren’t stuck in the code.
 
 I don’t 100% understand it yet, but now those numbers are flexible and easy to change.
+## Day 5 – Testing & Trust
+
+Today I added automated tests for the revenue system.
+
+What I learned:
+- Tests let me verify business logic instead of guessing
+- I can run all tests with `node --test` or `npm test`
+- Tests protect the system when code changes later
+
+This makes the system safer, easier to change, and more professional.
+## Day 6 – Persistence (Reading/Writing Files)
+
+I changed the system to load appointments from a JSON file instead of hard-coded data.
+
+The app now:
+- Reads input from `data/appointments.json`
+- Prints a daily report
+- Saves a report to `data/daily-report.txt`
+
+This is the start of a real backend workflow: input → processing → output.
