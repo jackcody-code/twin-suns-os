@@ -57,3 +57,11 @@ The app now:
 - Saves a report to `data/daily-report.txt`
 
 This is the start of a real backend workflow: input → processing → output.
+## Day 7 – Config-Driven Filtering
+
+I updated the appointment loader to accept configuration and filter data at load time.
+
+Key takeaways:
+- Functions that depend on config must be passed config consistently
+- Tests quickly exposed wiring mistakes
+- Filtering early simplifies later logic

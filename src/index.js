@@ -7,7 +7,7 @@ const { writeDailyReport } = require("./services/writeReport");
 const { config } = require("./config");
 
 const appointmentsPath = path.join(__dirname, "..", "data", "appointments.json");
-const appointments = loadAppointments(appointmentsPath);
+const appointments = loadAppointments(appointmentsPath, config);
 
 const dailyRevenue = calculateDailyRevenue(appointments, config);
 
