@@ -5,13 +5,14 @@ const path = require("node:path");
 const { loadAppointments } = require("../src/data/loadAppointments");
 
 test("filters appointments below minimumPrice when loading", () => {
-    const tempPath = path.join(process.cwd(), "data", "tmp-filter-test.json");
+    const tempPath = path.join(process.cwd(), "tests", "tmp-filter-test.json");
 
     const sample = [
         { client: "ASHLEY", price: 100 },
         { client: "HAWK", price: 600 },
         { client: "FOX", price: 1000 }
     ];
+fs.mkdirSync(path.dirname(tempPath), { recursive: true });
 
     fs.writeFileSync(tempPath, JSON.stringify(sample), "utf-8");
 

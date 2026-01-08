@@ -65,3 +65,13 @@ Key takeaways:
 - Functions that depend on config must be passed config consistently
 - Tests quickly exposed wiring mistakes
 - Filtering early simplifies later logic
+## Day 8 – Error Handling & Validation
+
+I added explicit error handling for file reading and JSON parsing.
+Tests helped expose:
+- syntax mistakes
+- mismatched expectations vs behavior
+- filesystem assumptions in test environments
+
+Key lesson:
+Tests must reflect real behavior, not imagined rules.

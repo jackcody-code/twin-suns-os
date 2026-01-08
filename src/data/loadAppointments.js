@@ -1,8 +1,20 @@
 const fs = require("node:fs");
 
 function loadAppointments(filePath, config) {
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const data = JSON.parse(raw);
+  let raw;
+  let data;
+
+  try {
+    raw = fs.readFileSync(filePath, "utf-8");
+  } catch (err) {
+    throw new Error(`Failed to read appointments file: ${filePath}`);
+  }
+
+  try {
+    data = JSON.parse(raw);
+  } catch (err) {
+    throw new Error("appointments.json contains invalid JSON");
+  }
 
   if (!Array.isArray(data)) {
     throw new Error("appointments.json must contain an array");
