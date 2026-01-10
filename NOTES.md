@@ -83,3 +83,11 @@ Why this matters:
 - index.js now coordinates instead of calculating
 - business logic lives in one place
 - changes are safer and easier to reason about
+## Day 10 – Contracts & Validation
+
+I added an appointment validation contract and enforced it in the data-loading layer.
+
+Key takeaways:
+- validation belongs at system boundaries
+- services should assume valid data
+- tests caught structural mistakes quickly
