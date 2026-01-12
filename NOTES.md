@@ -96,3 +96,6 @@ Key takeaways:
 I created a state machine for appointments with explicit allowed transitions.
 This adds guardrails that prevent invalid business behavior (like completing a canceled appointment).
 I wrote tests to prove valid transitions are allowed and invalid ones are blocked.
+# day 12 
+I added a service layer that orchestrates appointment state changes without embedding business rules. 
+The service validates inputs and delegates transitions to the domain layer, keeping responsibilities clean and testable. 
