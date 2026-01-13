@@ -99,3 +99,6 @@ I wrote tests to prove valid transitions are allowed and invalid ones are blocke
 # day 12 
 I added a service layer that orchestrates appointment state changes without embedding business rules. 
 The service validates inputs and delegates transitions to the domain layer, keeping responsibilities clean and testable. 
+# Day 13 - Persistence    
+I added a persistence layer that saves appointment state changes to disk while keeping business rules isolated.    
+Services orchestrate updates and persistence, and the domain later remains pure and testable. 
