@@ -102,3 +102,7 @@ The service validates inputs and delegates transitions to the domain layer, keep
 # Day 13 - Persistence    
 I added a persistence layer that saves appointment state changes to disk while keeping business rules isolated.    
 Services orchestrate updates and persistence, and the domain later remains pure and testable. 
+# Day 14 – Reporting as a First-Class Output
+Built a reporting service that aggregates appointment data by status.
+Learned how missing imports can break services even when tests are correct.
+Reporting is now a first-class concern, not an afterthought.

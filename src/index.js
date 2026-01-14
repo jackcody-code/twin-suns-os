@@ -1,26 +1,34 @@
 const path = require("node:path");
-
 const { loadAppointments } = require("./data/loadAppointments");
-const { calculateDailyRevenue } = require("./services/revenue");
-const { formatCurrency } = require("./utils/format");
-const { writeDailyReport } = require("./services/writeReport");
-const { config } = require("./config");
-const { calculateDailyRevenue } = require("./services/revenueService");
+const {
+  updateAndPersistAppointments,
+} = require("./services/appointmentService");
+const { APPOINTMENT_STATUS } = require("./domain/appointments");
+const { saveDailyReport } = require("./services/reportService");
+const baseDir = path.join(__dirname, "..", "data");
+const { reportPath, text } = saveDailyReport(baseDir, updated);
 
-const appointmentsPath = path.join(__dirname, "..", "data", "appointments.json");
-const appointments = loadAppointments(appointmentsPath, config);
-const revenue = calculateDailyRevenue(appointments);
+console.log("\n" + text);
+console.log("Saved report to:", reportPath);
 
-const dailyRevenue = calculateDailyRevenue(appointments, config);
+const DATA_PATH = path.join(__dirname, "..", "data", "appointments.json");
 
-const reportText =
-  `Daily Revenue Report\n` +
-  `-------------------\n` +
-  `Appointments: ${appointments.length}\n` +
-  `Revenue: ${formatCurrency(revenue, config)}\n`;
+// Load existing appointments
+const appointments = loadAppointments(DATA_PATH, { minimumPrice: 0 });
 
-console.log(reportText);
+// Update one appointment (example: id = 1 → confirmed)
+const updated = updateAndPersistAppointments(
+  DATA_PATH,
+  appointments,
+  1,
+  APPOINTMENT_STATUS.CONFIRMED
+);
 
-const reportOutPath = path.join(__dirname, "..", "data", "daily-report.txt");
-writeDailyReport(reportOutPath, reportText);
-console.log(`Saved report to: ${reportOutPath}`);
+// Summary output
+console.log("Daily Appointment Update");
+console.log("------------------------");
+console.log("Total appointments:", updated.length);
+console.log(
+  "Confirmed:",
+  updated.filter((a) => a.status === APPOINTMENT_STATUS.CONFIRMED).length
+);
