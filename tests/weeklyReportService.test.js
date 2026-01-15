@@ -13,7 +13,7 @@ test("buildWeeklyReport summarizes appointments correctly", () => {
     const report = buildWeeklyReport(appointments);
 
     assert.strictEqual(report.totalAppointments, 3);
-    assert.strictEqual(report.totalRevenue, 350);
+    assert.strictEqual(report.revenue, 350);
     assert.strictEqual(report.countsByStatus.completed, 2);
     assert.strictEqual(report.countsByStatus.canceled, 1);
 });

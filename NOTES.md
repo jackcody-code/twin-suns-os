@@ -109,3 +109,7 @@ Reporting is now a first-class concern, not an afterthought.
 # Day 15 – Weekly Reports
 Built weekly reports and a formatter that converts business data into readable owner reports.
 Learned how separating data, logic, and presentation makes systems easy to extend.
+# Day 15 - Operator Alerts & Metrics
+Added KPI-driven metrics and alerting to the reporting system.
+Weekly reports now calculate revenue, completion rate, and cancellation rate,
+and automatically flag risky business conditions based on thresholds.
