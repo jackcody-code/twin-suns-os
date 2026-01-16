@@ -113,3 +113,7 @@ Learned how separating data, logic, and presentation makes systems easy to exten
 Added KPI-driven metrics and alerting to the reporting system.
 Weekly reports now calculate revenue, completion rate, and cancellation rate,
 and automatically flag risky business conditions based on thresholds.
+# Day 16 — Operator Dashboard v0
+Today I built the first operator-facing dashboard for Twin Suns OS.
+I combined daily reporting, weekly metrics, and alert evaluation into a single summary that gives a real “at-a-glance” view of the business. This is the kind of output an owner would actually look at instead of digging through raw data.
+I also debugged and fixed a real integration issue where alert logic expected a metrics object that didn’t match the weekly report structure. I made the dashboard resilient to different report shapes so it won’t crash when data structures evolve.
