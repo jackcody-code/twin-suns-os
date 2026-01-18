@@ -1,13 +1,13 @@
 {
-  "name": "coding",
-  "version": "1.0.0",
   "main": "hello.js",
   "scripts": {
-   "start": "node src/index.js", 
-   "test": "node --test"
+    "start": "node src/index.js",
+    "test": "node --test",
+    "dashboard": "node src/cli/dashboard.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
 }
+

@@ -4,8 +4,10 @@ function buildDailyReport(appointments, options = {}) {
     includeStatuses = true,
   } = options;
 const { APPOINTMENT_STATUS } = require("../domain/appointments");
+appointments = (appointments || []).map(a => ({ status: APPOINTMENT_STATUS.REQUESTED, ...a }));
 
-  const total = appointments.length;
+const total = appointments.length;
+
 
   const counts = {
     requested: appointments.filter((a) => a.status === APPOINTMENT_STATUS.REQUESTED).length,
