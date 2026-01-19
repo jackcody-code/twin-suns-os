@@ -135,3 +135,12 @@ I also debugged and fixed a real integration issue where alert logic expected a 
 * Locked runtime expectations with `.nvmrc` and resolved tooling issues introduced during machine swap.
 
 **Status:** CLI is stable, predictable, and ready for operator use and interviews.
+# Day 19 — Operator Alerts Wired into CLI
+
+* Implemented alert evaluation as a first-class service that determines when the operator should care.
+* Wired alert logic into the CLI so decisions are surfaced alongside reports, not buried in data.
+* Fixed real-world scoping and data-flow issues by enforcing explicit inputs to alert evaluation.
+* Established clean separation between data loading, decision logic, and presentation.
+* Verified alerts trigger correctly and print deterministic, operator-readable output.
+
+**Status:** Alerting pipeline works end-to-end; system now signals action instead of just reporting state.
