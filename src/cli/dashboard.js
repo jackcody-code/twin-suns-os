@@ -16,7 +16,9 @@ function main() {
   fs.mkdirSync(reportsDir, { recursive: true });
 
   const appointments = loadAppointments(dataPath, { minimumPrice: 0 }) || [];
-  const appointmentsTomorrow = appointments.length; // TEMP proxy until tomorrow data exists
+  const appointmentsTomorrow = appointments.length;
+
+
 
   const text = buildDailyReport(appointments);
 

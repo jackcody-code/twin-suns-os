@@ -153,3 +153,12 @@ I also debugged and fixed a real integration issue where alert logic expected a 
 * Confirmed the dashboard now surfaces actionable signals instead of ambiguous warnings.
 
 **Status:** Alerting is clearer, prioritized, and operator-grade; system communicates urgency correctly.
+# Day 22 — Alert Threshold Tuning & Trust Calibration
+
+* Tuned alert thresholds to ensure signals are conservative, intentional, and operator-trustworthy.
+* Centralized threshold values to make alert behavior explicit and easy to adjust.
+* Validated alert behavior across multiple simulated scenarios (critical, warning, healthy).
+* Ensured alert messages clearly communicate severity and required attention level.
+* Confirmed alerting now feels reliable rather than noisy or reactive.
+
+**Status:** Alert system is tuned, trustworthy, and calibrated for real operator use.
